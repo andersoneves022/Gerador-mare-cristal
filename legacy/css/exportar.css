@@ -1,0 +1,25 @@
+/* Exportação: tokens Maré Cristal, unidade u = 24 px */
+.exportar__grade { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: var(--u); align-items: start; }
+.exportar__cabeca { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.exportar__lista { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.exportar__rotulo { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid var(--linha); border-radius: var(--raio); cursor: pointer; }
+.exportar__rotulo:has(input:checked) { border-color: var(--turquesa); background: var(--turquesa-15); }
+.exportar__rotulo input { width: 20px; height: 20px; accent-color: var(--oceano); flex: none; }
+.exportar__ordem { min-width: 36px; padding: 2px 8px; text-align: center; font: 700 0.875rem var(--fonte-titulo); background: var(--lima); border-radius: var(--raio-pilula); }
+.exportar__ordem[hidden] { display: none; }
+.exportar__resumo { font-weight: 600; }
+.exportar__plano { margin: 0; padding-left: 18px; font-size: 0.8125rem; word-break: break-all; }
+.exportar__acoes { display: grid; gap: 8px; justify-items: start; margin-top: 8px; }
+.exportar__arquivos { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.exportar__arquivos li { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.exportar__erros { margin: 0; padding-left: 18px; }
+.exportar .campo[hidden] { display: none; }
+.campo__entrada { min-height: 44px; padding: 0 16px; font: 1rem var(--fonte-texto); color: var(--oceano); background: var(--branco); border: 2px solid var(--linha); border-radius: var(--raio-pilula); }
+@media (max-width: 960px) { .exportar__grade { grid-template-columns: 1fr; } }
+.exportar__opcoes .aviso { flex-direction: column; align-items: start; }
+.exportar__estado { display: grid; gap: 8px; width: 100%; }
+.exportar__acoes .botao { border-radius: var(--raio-pilula); }
+.exportar__confirmacoes { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.exportar__confirmacoes li { display: grid; gap: 4px; }
+.exportar__confirmar { display: flex; align-items: start; gap: 8px; cursor: pointer; }
+.exportar__confirmar input { width: 20px; height: 20px; accent-color: var(--oceano); flex: none; }

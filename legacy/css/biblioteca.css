@@ -1,0 +1,88 @@
+/* Biblioteca de fotografias: usa só os tokens Maré Cristal e a unidade u = 24 px */
+.biblioteca { gap: var(--u); }
+
+.acoes {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 16px var(--u);
+  padding: var(--u); background: var(--branco);
+  border: 2px dashed var(--turquesa); border-radius: var(--raio);
+}
+.acoes--arrastando { background: var(--turquesa-15); border-style: solid; }
+.acoes__texto { display: grid; gap: 2px; flex: 1 1 260px; }
+.acoes__texto strong { font-family: var(--fonte-titulo); }
+
+.botao:disabled { opacity: 0.5; cursor: not-allowed; }
+.botao--escuro { background: var(--oceano); color: var(--espuma); }
+.botao--pequeno { min-height: 36px; font-size: 0.875rem; padding: 0 16px; }
+
+.filtros { display: flex; flex-wrap: wrap; align-items: end; gap: 16px; }
+.campo { display: grid; gap: 4px; font-size: 0.875rem; font-weight: 600; }
+.campo select {
+  min-height: 44px; padding: 0 16px; min-width: 190px; max-width: 100%;
+  font: 500 1rem var(--fonte-texto); color: var(--oceano);
+  background: var(--branco); border: 2px solid var(--turquesa); border-radius: var(--raio-pilula);
+}
+.contagem { font-weight: 600; }
+
+.grade {
+  display: grid; gap: 16px; margin: 0; padding: 0; list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+.foto { position: relative; }
+.foto__abrir {
+  display: grid; width: 100%; padding: 0; text-align: left; cursor: pointer;
+  font: inherit; color: inherit; background: var(--branco);
+  border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden;
+}
+.foto__abrir:hover { border-color: var(--turquesa); }
+.foto__quadro { position: relative; aspect-ratio: 4 / 3; background: var(--areia); }
+.foto__quadro img { width: 100%; height: 100%; object-fit: cover; }
+.foto__sem { position: absolute; inset: 0; display: grid; place-items: center; padding: 8px; font-size: 0.875rem; text-align: center; }
+.foto__selo {
+  position: absolute; left: 12px; bottom: 12px; padding: 2px 12px;
+  background: var(--turquesa); border-radius: var(--raio-pilula); font-weight: 700; font-size: 0.875rem;
+}
+.foto__legenda { display: grid; gap: 2px; padding: 12px 16px 16px; min-width: 0; }
+.foto__nome { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.foto__cat { font-size: 0.875rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.foto__fav {
+  position: absolute; top: 12px; right: 12px; width: 44px; height: 44px;
+  display: grid; place-items: center; padding: 0; cursor: pointer;
+  background: var(--branco); border: 2px solid var(--turquesa); border-radius: var(--raio-pilula);
+}
+.foto__fav svg { width: 24px; height: 24px; fill: none; stroke: var(--oceano); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.foto__fav[aria-pressed="true"] { background: var(--sol); border-color: var(--sol); }
+.foto__fav[aria-pressed="true"] svg { fill: var(--oceano); }
+
+.lista-simples { margin: 4px 0 0; padding-left: 20px; display: grid; gap: 2px; }
+
+/* Ficha da fotografia (caixa de diálogo nativa) */
+.ficha {
+  width: min(1120px, 94vw); max-height: 94vh; padding: var(--u);
+  color: var(--oceano); background: var(--espuma);
+  border: 1px solid var(--linha); border-radius: var(--raio); overflow: auto;
+}
+.ficha::backdrop { background: rgba(10, 79, 96, 0.6); }
+.ficha__grade { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr); gap: var(--u); align-items: start; }
+.ficha__imagem {
+  margin: 0; display: grid; place-items: center; min-height: 240px;
+  background: var(--areia); border-radius: 16px; overflow: hidden;
+}
+.ficha__imagem img { max-height: 70vh; width: auto; max-width: 100%; object-fit: contain; }
+.ficha__info { display: grid; gap: 16px; min-width: 0; }
+.ficha__info h2 { overflow-wrap: anywhere; }
+.ficha .dados { gap: 8px 16px; }
+.ficha .dados dd { overflow-wrap: anywhere; }
+.grupo { border: 1px solid var(--linha); border-radius: 16px; padding: 12px 16px 16px; margin: 0; display: grid; gap: 4px; }
+.grupo legend { font-weight: 600; padding: 0 8px; }
+.opcao { display: flex; align-items: center; gap: 12px; min-height: 36px; cursor: pointer; }
+.opcao input { width: 20px; height: 20px; accent-color: var(--turquesa); flex: none; }
+.ficha__botoes { display: flex; flex-wrap: wrap; gap: 12px; }
+.ficha__navegacao { display: flex; gap: 12px; justify-content: space-between; margin-top: var(--u); flex-wrap: wrap; }
+
+@media (max-width: 800px) {
+  .ficha { width: 100vw; max-height: 100vh; border-radius: 0; padding: 16px; }
+  .ficha__grade { grid-template-columns: minmax(0, 1fr); }
+  .grade { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .campo select { min-width: 150px; }
+}

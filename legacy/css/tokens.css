@@ -1,0 +1,22 @@
+/* Maré Cristal: valores do Manual de Identidade Visual (prancha aprovada) */
+:root {
+  --espuma: #F4FAF9;
+  --turquesa: #14B8CE;
+  --oceano: #0A4F60;
+  --lima: #C6F000;
+  --sol: #FFC94D;
+  --areia: #EFE5CF;
+  --branco: #FFFFFF;
+  --erro: #B42318;
+
+  --linha: rgba(10, 79, 96, 0.16);
+  --turquesa-15: rgba(20, 184, 206, 0.15);
+
+  --fonte-titulo: "Sora", "Segoe UI", system-ui, sans-serif;
+  --fonte-texto: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  /* Unidade u = 24 px (Manual §6) */
+  --u: 24px;
+  --raio: 24px;
+  --raio-pilula: 999px;
+}

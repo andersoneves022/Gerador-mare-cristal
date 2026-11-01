@@ -1,0 +1,22 @@
+.cartao {
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  padding: var(--u);
+  display: grid; gap: 16px;
+  max-width: 760px;
+}
+.dados { display: grid; grid-template-columns: max-content 1fr; gap: 12px 24px; margin: 0; }
+.dados dt { font-weight: 600; }
+.dados dd { margin: 0; }
+.nota { font-size: 0.875rem; }
+.barra { display: grid; gap: 4px; margin-top: 4px; }
+.barra progress {
+  appearance: none; -webkit-appearance: none;
+  width: 100%; height: 12px; border: 0; border-radius: var(--raio-pilula);
+  background: var(--turquesa-15); overflow: hidden;
+}
+.barra progress::-webkit-progress-bar { background: var(--turquesa-15); }
+.barra progress::-webkit-progress-value { background: var(--turquesa); border-radius: var(--raio-pilula); }
+.barra progress::-moz-progress-bar { background: var(--turquesa); }
+@media (max-width: 800px) { .dados { grid-template-columns: 1fr; gap: 2px; } .dados dd { margin-bottom: 12px; } }
