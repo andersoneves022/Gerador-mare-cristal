@@ -1,6 +1,6 @@
 // Netlify Function: geração de textos com IA (OpenRouter → Cloudflare Workers AI).
 // Chaves configuradas em Netlify → Site configuration → Environment variables.
-import { tratarCopywriting, lerOrigens } from '../../src/lib/copywriting-handler.server';
+import { tratarCopywriting, lerOrigens } from '../../lib/copywriting-handler.server';
 
 declare const Netlify: { env: { get(nome: string): string | undefined } } | undefined;
 
